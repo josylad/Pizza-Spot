@@ -1,8 +1,8 @@
 # Pizza Spot
-#### A Pizza Website, 26/07/2019
+#### A Pizza Ordering Website, 26/07/2019
 #### By **Joseph Adediji**
 ## Description
-This is a Pizza website for ordering Pizzas from the comfort of your home. 
+This is a Pizza website where customers order different sizes of pizzas with one or more toppings.  
 ## Setup/Installation Requirements
 * Download or clone the files
 * Edit with any text or code editor
