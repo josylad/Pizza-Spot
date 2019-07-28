@@ -4,3 +4,13 @@
 /* body{
   padding-top: 25px;
 } */
+
+/* .deladdress {
+  display: none;
+} */
+hr.new1 {
+  border-top: 1px solid blue;
+}
+.underline {
+  text-decoration: underline double darkblue;
+}
