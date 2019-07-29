@@ -82,7 +82,7 @@ $(document).ready(function () {
    var name = $("input#email").val();
    var name = $("input#name").val();
    if ($("input#name").val() && $("input#email").val() && $("textarea#message").val() && $("input#subject").val() != "") {
-     alert(name + ". Thankyou for contacting us!!");
+     alert(name + ". Thank you for contacting us!!");
    } else {
      alert("please enter your name,email,subject and message.")
    }
