@@ -1,3 +1,4 @@
+//Business Logic
 $("input[name='delivery']").on("click", function() {
   $(".deladdress").toggle(this.value == "50" && this.checked);
 });
@@ -17,6 +18,7 @@ var toppingsPrice = function checkTotal() {
   document.orderform1.total.value = sum;
 }
 
+// User Interface Logic
 
 function totalprice(form) {
   var size = parseInt(document.forms["orderform1"]["sizes"].value);
