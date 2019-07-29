@@ -1,9 +1,3 @@
-var crust = {
- type1:3221,
- type2:678,
- type3:78998
-}
-
 $("input[name='delivery']").on("click", function() {
   $(".deladdress").toggle(this.value == "50" && this.checked);
 });
@@ -54,13 +48,23 @@ function totalprice(form) {
   //     alert("Delivery option must be  selected")();
   //     return false;
   //   }
+  var fname = document.forms["orderform1"]["fname"].value;
+  if (fname == "") {
+    alert("First name must be filled out");
+    return false;
+  }
+  var lname = document.forms["orderform1"]["lname"].value;
+  if (lname == "") {
+    alert("Last name must be filled out");
+    return false;
+  }
+  var fullName = lname + (" ")+ fname;
   var result = price(size, crust, toppings, quantity, deliver);
-  var pizzaSize = size;
-  document.getElementById("output").innerHTML = $(".size option:selected").text();
-  document.getElementById("output").innerHTML = crust;
-  document.getElementById("output").innerHTML = toppings;
-  document.getElementById("output").innerHTML = ("Your Total order is ") + result;
-  alert(result);
+
+
+  document.getElementById("custname").innerHTML = ("Name: ") + fullName;
+  document.getElementById("output").innerHTML = ("Your order Total is = ") + result +(" KES");
+  alert("Thank You for Ordering Our Pizza! Your Order is on it's way!");
 $("form#checkout").css('data-dismiss','modal');
 $("#summary").show();
 $("body, html").animate({
@@ -68,6 +72,20 @@ $("body, html").animate({
 },1000)
 }
 
+
+// $(document).ready(function () {
+//  $("button#button2").click(function () {
+//    var name = $("input#subject").val();
+//    var name = $("textarea#message").val();
+//    var name = $("input#email").val();
+//    var name = $("input#name").val();
+//    if ($("input#name").val() && $("input#email").val() && $("textarea#message").val() && $("input#subject").val() != "") {
+//      alert(name + " Thankyou for contacting us!!");
+//    } else {
+//      alert("please enter your name,email,subject and message.")
+//    }
+//  });
+// });
 // var newRow = '<tr><th scope="row">' + newPizza.orderNo + '</th><td id="size">' + $(".size option:selected").text() + " - " + newPizza.size + '</td><td id="toppings">' + $(".toppings option:selected").text() + " - " + newPizza.toppings + '</td><td id="crust">' + $(".crust option:selected").text() + " - " + newPizza.crust + '</td><td id="total">' + newPizza.total + '</td></tr>'
 //
 //      $("#output").append(newRow);
