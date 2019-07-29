@@ -2,10 +2,6 @@ $("input[name='delivery']").on("click", function() {
   $(".deladdress").toggle(this.value == "50" && this.checked);
 });
 
-// $('#myModal').on('shown.bs.modal', function () {
-//   $('#myInput').trigger('focus')
-// })
-
 var price = function(size, crust, toppings, quantity, deliver) {
   return ((size + crust + toppings) * quantity) + deliver
 };
@@ -63,8 +59,8 @@ function totalprice(form) {
 
 
   document.getElementById("custname").innerHTML = ("Name: ") + fullName;
-  document.getElementById("output").innerHTML = ("Your order Total is = ") + result +(" KES");
-  alert("Thank You for Ordering Our Pizza! Your Order is on it's way!");
+  document.getElementById("output").innerHTML = ("Your order Total is = ") + result + (" KES");
+  alert("Your total order is " + result + " KES." + " Thank You for Ordering Our Pizza! Your Order is on it's way!");
 $("form#checkout").css('data-dismiss','modal');
 $("#summary").show();
 $("body, html").animate({
@@ -72,7 +68,13 @@ $("body, html").animate({
 },1000)
 }
 
-
+// $('form').on('submit', function () {
+//     var names = [];
+//     $.each($(this).find('input, textarea'), function () {
+//         names.push(this.name);
+//     });
+// });
+// alert(names[0])
 // $(document).ready(function () {
 //  $("button#button2").click(function () {
 //    var name = $("input#subject").val();
