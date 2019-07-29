@@ -341,7 +341,7 @@
                       <strong>PIZZA SPOT ORDER FORM</strong>
                     </h5>
                     <label for="fname"><strong>FIRST NAME:</strong></label>
-                    <input type="text" name="fname" class="form-control" placeholder="first name"><br>
+                    <input type="text" name="fname" class="form-control" placeholder="first name" id=""><br>
 
                     <label for="lname"><strong>LAST NAME:</strong></label>
                     <input type="text" name="lname" class="form-control" placeholder="last name"><br>
@@ -454,14 +454,17 @@
         </div>
 
       <!-- END ORDER FORM -->
-      <div class="container" id="summary">
-        <h3>ORDER SUMMARY</h3>
+      <div class="container mb-4" id="summary">
+        <h3 class="underline">ORDER SUMMARY</h3> <br>
 
         <div class="row">
           <div class="col-md-6">
-            <ul id=output>
+            <h5 id="custname">
 
-            </ul>
+            </h5>
+            <h5 id="output">
+            </h5>
+
           </div>
 
           <div class="col-md-6">
@@ -550,7 +553,7 @@
               </form>
 
               <div class="text-center text-md-left">
-                <a class="btn btn-primary" onclick="validateForm()">Send</a>
+                <a class="btn btn-primary" onclick="validateForm()" id="button2">Send</a>
               </div>
               <div class="status"></div>
             </div>
