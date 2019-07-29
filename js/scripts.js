@@ -75,19 +75,19 @@ $("body, html").animate({
 //     });
 // });
 // alert(names[0])
-// $(document).ready(function () {
-//  $("button#button2").click(function () {
-//    var name = $("input#subject").val();
-//    var name = $("textarea#message").val();
-//    var name = $("input#email").val();
-//    var name = $("input#name").val();
-//    if ($("input#name").val() && $("input#email").val() && $("textarea#message").val() && $("input#subject").val() != "") {
-//      alert(name + " Thankyou for contacting us!!");
-//    } else {
-//      alert("please enter your name,email,subject and message.")
-//    }
-//  });
-// });
+$(document).ready(function () {
+ $("button#button2").click(function () {
+   var name = $("input#subject").val();
+   var name = $("textarea#message").val();
+   var name = $("input#email").val();
+   var name = $("input#name").val();
+   if ($("input#name").val() && $("input#email").val() && $("textarea#message").val() && $("input#subject").val() != "") {
+     alert(name + ". Thankyou for contacting us!!");
+   } else {
+     alert("please enter your name,email,subject and message.")
+   }
+ });
+});
 // var newRow = '<tr><th scope="row">' + newPizza.orderNo + '</th><td id="size">' + $(".size option:selected").text() + " - " + newPizza.size + '</td><td id="toppings">' + $(".toppings option:selected").text() + " - " + newPizza.toppings + '</td><td id="crust">' + $(".crust option:selected").text() + " - " + newPizza.crust + '</td><td id="total">' + newPizza.total + '</td></tr>'
 //
 //      $("#output").append(newRow);
