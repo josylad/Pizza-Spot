@@ -1,6 +1,16 @@
+var crust = {
+ type1:3221,
+ type2:678,
+ type3:78998
+}
+
 $("input[name='delivery']").on("click", function() {
   $(".deladdress").toggle(this.value == "50" && this.checked);
 });
+
+// $('#myModal').on('shown.bs.modal', function () {
+//   $('#myInput').trigger('focus')
+// })
 
 var price = function(size, crust, toppings, quantity, deliver) {
   return ((size + crust + toppings) * quantity) + deliver
@@ -45,9 +55,23 @@ function totalprice(form) {
   //     return false;
   //   }
   var result = price(size, crust, toppings, quantity, deliver);
-  document.getElementById("output").innerHTML = result;
+  var pizzaSize = size;
+  document.getElementById("output").innerHTML = $(".size option:selected").text();
+  document.getElementById("output").innerHTML = crust;
+  document.getElementById("output").innerHTML = toppings;
+  document.getElementById("output").innerHTML = ("Your Total order is ") + result;
   alert(result);
+$("form#checkout").css('data-dismiss','modal');
+$("#summary").show();
+$("body, html").animate({
+  scrollTop: $("#summary").offset().top
+},1000)
 }
+
+// var newRow = '<tr><th scope="row">' + newPizza.orderNo + '</th><td id="size">' + $(".size option:selected").text() + " - " + newPizza.size + '</td><td id="toppings">' + $(".toppings option:selected").text() + " - " + newPizza.toppings + '</td><td id="crust">' + $(".crust option:selected").text() + " - " + newPizza.crust + '</td><td id="total">' + newPizza.total + '</td></tr>'
+//
+//      $("#output").append(newRow);
+//    });'''
 
 
 // function pizzaOrder() {
