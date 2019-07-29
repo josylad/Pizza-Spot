@@ -161,7 +161,7 @@
                 <h4 class="card-title">LOADED PEPPERONI</h4>
                 <!--Text-->
                 <p class="card-text">Loaded with 50% more tasty pepperoni & mozzarella cheese.</p>
-                <button type="button" class="btn blue-gradient btn-block clickable">ORDER NOW</button>
+                <button type="button" class="btn blue-gradient btn-block clickable" data-toggle="modal" data-target="#myModal">ORDER NOW</button>
               </div>
 
             </div>
@@ -190,7 +190,7 @@
                 <h4 class="card-title">BBQ STEAK & BACON</h4>
                 <!--Text-->
                 <p class="card-text">Tender steak, crispy rasher bacon and red onion topped with BBQ sauce..</p>
-                <button type="button" class="btn blue-gradient btn-block">ORDER NOW</button>
+                <button type="button" class="btn blue-gradient btn-block" data-toggle="modal" data-target="#myModal">ORDER NOW</button>
               </div>
 
             </div>
@@ -219,7 +219,7 @@
                 <h4 class="card-title">KOREAN BBQ STEAK</h4>
                 <!--Text-->
                 <p class="card-text">Tender steak, red onion and capsicum served on a BBQ sauce base topped with chilli flakes, spring onion, sesame seeds & a sweet smoky Korean sauce.</p>
-                <button type="button" class="btn blue-gradient btn-block">ORDER NOW</button>
+                <button type="button" class="btn blue-gradient btn-block" data-toggle="modal" data-target="#myModal">ORDER NOW</button>
               </div>
 
             </div>
@@ -254,7 +254,7 @@
                 <h4 class="card-title">PHILLY CHEESE STEAK</h4>
                 <!--Text-->
                 <p class="card-text">Tender steak, mushrooms, red onion and capsicum on a creamy cheese sauce base.</p>
-                <button type="button" class="btn blue-gradient btn-block">ORDER NOW</button>
+                <button type="button" class="btn blue-gradient btn-block" data-toggle="modal" data-target="#myModal">ORDER NOW</button>
               </div>
 
             </div>
@@ -283,7 +283,7 @@
                 <h4 class="card-title">GODFATHER</h4>
                 <!--Text-->
                 <p class="card-text">Pepperoni, Italian sausage, tomato, capsicum, olives, mozzarella & oregano on a tomato & garlic sauce base.</p>
-                <button type="button" class="btn blue-gradient btn-block">ORDER NOW</button>
+                <button type="button" class="btn blue-gradient btn-block" data-toggle="modal" data-target="#myModal">ORDER NOW</button>
               </div>
 
             </div>
@@ -312,7 +312,7 @@
                 <h4 class="card-title">EIGHT MEATS</h4>
                 <!--Text-->
                 <p class="card-text">Seasoned chicken, pepperoni, NZ ground beef, Manuka smoked ham, pork & fennel sausage, Italian sausage, chorizo with crispy rasher bacon.</p>
-                <button type="button" class="btn blue-gradient btn-block" onclick="openForm()">ORDER NOW</button>
+                <button type="button" class="btn blue-gradient btn-block" data-toggle="modal" data-target="#myModal">ORDER NOW</button>
               </div>
 
             </div>
@@ -323,127 +323,142 @@
 
         </div>
         <!--Grid row-->
-        <!-- ORDER form -->
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
 
-        <div id="orderform" class="orderpizza">
-          <form onsubmit="return totalprice()" method="post" class="border border-light p-5 form-group" name="orderform1" id="orderform1">
-            <h5 class="h4 mb-4 text-center underline">
-              <strong>PIZZA SPOT ORDER FORM</strong>
-            </h5>
-            <label for="fname"><strong>FIRST NAME:</strong></label>
-            <input type="text" name="fname" class="form-control" placeholder="first name"><br>
-
-            <label for="lname"><strong>LAST NAME:</strong></label>
-            <input type="text" name="lname" class="form-control" placeholder="last name"><br>
-
-            <label for="formEmail"><strong>E-MAIL:</strong></label>
-            <input type="email" id="formEmail" class="form-control" placeholder="Your email"> <br>
-
-
-            <label for="phone"><strong>PHONE:</strong></label>
-            <input type="tel" id="phone" class="form-control" placeholder="0700000100"> <br>
-            <hr class="new1">
-            <div>
-              <label for="sizeselect"><strong>PIZZA SIZE:</strong></label>
-              <select class="mdb-select md-form mb-4 initialized form-control" id="sizeselect" name="sizes">
-                <option value="" disabled selected>CHOOSE PIZZA SIZE</option>
-                <option value="150">SMALL - 150 KES</option>
-                <option value="250">MEDIUM - 250 KES</option>
-                <option value="450">LARGE - 450 KES</option>
-              </select>
-
-            </div>
-            <hr class="new1">
-            <div>
-              <label for="sizeselect"><strong>PIZZA CRUST:</strong></label>
-              <select class="mdb-select md-form mb-4 initialized form-control" id="crustselect" name="crust">
-                <option value="" disabled selected>CHOOSE PIZZA CRUST</option>
-                <option value="50">Thick Crust - 50 KES</option>
-                <option value="50">Flatbread Crust - 50 KES</option>
-                <option value="50">Thin Crust - 50 KES</option>
-                <option value="50">Stuffed - 50 KES</option>
-                <option value="50">Cracker Crust - 50 KES</option>
-                <option value="50">Focaccia - 50 KES</option>
-              </select>
-            </div>
-
-            <hr class="new1">
-            <p><strong>PIZZA TOPPINGS:</strong></p>
-            <div class="mb-4">
-              <div class="form-check form-control">
-                <input type="checkbox" class="form-check-input" id="pepperoni" name="toppings" value="100" onchange="toppingsPrice()" />
-                <label class="form-check-label" for="pepperoni">
-                  LOADED PEPPERONI - 100 KES</label>
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"></h4>
               </div>
-              <div class="form-check form-control">
-                <input type="checkbox" class="form-check-input" id="bbqsteak" name="toppings" value="100" onchange="toppingsPrice()" />
-                <label class="form-check-label" for="bbqsteak">
-                  BBQ STEAK & BACON - 100 KES</label>
+              <div class="modal-body">
+
+                <div id="orderform" class="orderpizza">
+                  <form method="post" class="border border-light p-5 form-group" name="orderform1" id="orderform1">
+                    <h5 class="h4 mb-4 text-center underline">
+                      <strong>PIZZA SPOT ORDER FORM</strong>
+                    </h5>
+                    <label for="fname"><strong>FIRST NAME:</strong></label>
+                    <input type="text" name="fname" class="form-control" placeholder="first name"><br>
+
+                    <label for="lname"><strong>LAST NAME:</strong></label>
+                    <input type="text" name="lname" class="form-control" placeholder="last name"><br>
+
+                    <label for="formEmail"><strong>E-MAIL:</strong></label>
+                    <input type="email" id="formEmail" class="form-control" placeholder="Your email"> <br>
+
+
+                    <label for="phone"><strong>PHONE:</strong></label>
+                    <input type="tel" id="phone" class="form-control" placeholder="0700000100"> <br>
+                    <hr class="new1">
+                    <div>
+                      <label for="sizeselect"><strong>PIZZA SIZE:</strong></label>
+                      <select class="mdb-select md-form mb-4 initialized form-control" id="sizeselect" name="sizes">
+                        <option value="" disabled selected>CHOOSE PIZZA SIZE</option>
+                        <option value="150">SMALL - 150 KES</option>
+                        <option value="250">MEDIUM - 250 KES</option>
+                        <option value="450">LARGE - 450 KES</option>
+                      </select>
+
+                    </div>
+                    <hr class="new1">
+                    <div>
+                      <label for="sizeselect"><strong>PIZZA CRUST:</strong></label>
+                      <select class="mdb-select md-form mb-4 initialized form-control" id="crustselect" name="crust">
+                        <option value="" disabled selected>CHOOSE PIZZA CRUST</option>
+                        <option value="50">Thick Crust - 50 KES</option>
+                        <option value="50">Flatbread Crust - 50 KES</option>
+                        <option value="50">Thin Crust - 50 KES</option>
+                        <option value="50">Stuffed - 50 KES</option>
+                        <option value="50">Cracker Crust - 50 KES</option>
+                        <option value="50">Focaccia - 50 KES</option>
+                      </select>
+                    </div>
+
+                    <hr class="new1">
+                    <p><strong>PIZZA TOPPINGS:</strong></p>
+                    <div class="mb-4">
+                      <div class="form-check form-control">
+                        <input type="checkbox" class="form-check-input" id="pepperoni" name="toppings" value="100" onchange="toppingsPrice()" />
+                        <label class="form-check-label" for="pepperoni">
+                          LOADED PEPPERONI - 100 KES</label>
+                      </div>
+                      <div class="form-check form-control">
+                        <input type="checkbox" class="form-check-input" id="bbqsteak" name="toppings" value="100" onchange="toppingsPrice()" />
+                        <label class="form-check-label" for="bbqsteak">
+                          BBQ STEAK & BACON - 100 KES</label>
+                      </div>
+                      <div class="form-check form-control">
+                        <input type="checkbox" class="form-check-input" id="koreanbbq" name="toppings" value="100" onchange="toppingsPrice()" />
+                        <label class="form-check-label" for="koreanbbq">
+                          KOREAN BBQ STEAK - 100 KES</label>
+                      </div>
+                      <div class="form-check form-control">
+                        <input type="checkbox" class="form-check-input" id="phillycheese" name="toppings" value="100" onchange="toppingsPrice()" />
+                        <label class="form-check-label" for="phillycheese">
+                          PHILLY CHEESE STEAK - 100 KES</label>
+                      </div>
+                      <div class="form-check form-control">
+                        <input type="checkbox" class="form-check-input" id="godfather" name="toppings" value="100" onchange="toppingsPrice()" />
+                        <label class="form-check-label" for="godfather">
+                          GODFATHER - 100 KES</label>
+                      </div>
+                      <div class="form-check form-control">
+                        <input type="checkbox" class="form-check-input" id="eightmeats" name="toppings" value="100" onchange="toppingsPrice()" />
+                        <label class="form-check-label" for="eightmeats">
+                          EIGHT MEATS - 100 KES</label>
+                      </div>
+                      <p><strong>Total Toppings:</strong> <input type="number" size="2" name="total" value="" class="form-control" id="total" /></p>
+                    </div>
+
+                    <hr class="new1">
+
+                    <div>
+                      <label for="quantity"><strong>QUANTITY:</strong></label>
+                      <input type="number" id="quantity" min="1" class="form-control mb-4" placeholder="enter quantity of Pizza" name="quantity">
+                    </div>
+
+                    <hr class="new1">
+
+                    <label for="delivery"> <strong>DO YOU NEED DELIVERY?</strong></label> <br>
+                    <input type="radio" id="delivery" value="50" class="mb-4 form" name="delivery" checked> Yes (50 KES)<br>
+                    <input type="radio" id="delivery" value="0" name="delivery" class="mb-4"> No <br>
+
+                    <div class="deladdress mb-4">
+                      <p>Your order will be delivered to your location.</p>
+                      <label for="address"><strong>DELIVERY ADDRESS: </strong></label>
+                      <textarea class="form-control" id="address" placeholder=""></textarea>
+                    </div>
+                    <hr class="new1">
+
+                    <div class="">
+                      <label for="comment"><strong>COMMENT</strong></label>
+                      <textarea type="text" id="comment" class="form-control" rows="1" placeholder="extra order comment"></textarea>
+
+                    </div>
+
+                    <button class="btn-lg btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" id="checkout" type="button" name="data"  onclick="return totalprice();" data-dismiss="modal">CHECKOUT</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </form>
+                </div>
               </div>
-              <div class="form-check form-control">
-                <input type="checkbox" class="form-check-input" id="koreanbbq" name="toppings" value="100" onchange="toppingsPrice()" />
-                <label class="form-check-label" for="koreanbbq">
-                  KOREAN BBQ STEAK - 100 KES</label>
               </div>
-              <div class="form-check form-control">
-                <input type="checkbox" class="form-check-input" id="phillycheese" name="toppings" value="100" onchange="toppingsPrice()" />
-                <label class="form-check-label" for="phillycheese">
-                  PHILLY CHEESE STEAK - 100 KES</label>
+              <div class="modal-footer">
+
               </div>
-              <div class="form-check form-control">
-                <input type="checkbox" class="form-check-input" id="godfather" name="toppings" value="100" onchange="toppingsPrice()" />
-                <label class="form-check-label" for="godfather">
-                  GODFATHER - 100 KES</label>
-              </div>
-              <div class="form-check form-control">
-                <input type="checkbox" class="form-check-input" id="eightmeats" name="toppings" value="100" onchange="toppingsPrice()" />
-                <label class="form-check-label" for="eightmeats">
-                  EIGHT MEATS - 100 KES</label>
-              </div>
-              <p><strong>Total:</strong> <input type="number" size="2" name="total" value="" class="form-control" id="total" /></p>
             </div>
 
-            <hr class="new1">
-
-            <div>
-              <label for="quantity"><strong>QUANTITY:</strong></label>
-              <input type="number" id="quantity" min="1" class="form-control mb-4" placeholder="enter quantity of Pizza" name="quantity">
-            </div>
-
-            <hr class="new1">
-
-            <label for="delivery"> <strong>DO YOU NEED DELIVERY?</strong></label> <br>
-            <input type="radio" id="delivery" value="50" class="mb-4 form" name="delivery" checked> Yes (50 KES)<br>
-            <input type="radio" id="delivery" value="0" name="delivery" class="mb-4"> No <br>
-
-            <div class="deladdress mb-4">
-              <p>Your order will be delivered to your location.</p>
-              <label for="address"><strong>DELIVERY ADDRESS: </strong></label>
-              <textarea class="form-control" id="address" placeholder=""></textarea>
-            </div>
-            <hr class="new1">
-
-            <div class="">
-              <label for="comment"><strong>COMMENT</strong></label>
-              <textarea type="text" id="comment" class="form-control" rows="1" placeholder="extra order comment"></textarea>
-
-            </div>
-
-            <button class="btn-lg btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">CHECKOUT</button>
-
-          </form>
+          </div>
         </div>
-      </div>
-
-      </div>
 
       <!-- END ORDER FORM -->
-      <div class="container">
+      <div class="container" id="summary">
         <h3>ORDER SUMMARY</h3>
 
         <div class="row">
           <div class="col-md-6">
-            <h2>Contacts:</h2>
             <ul id=output>
 
             </ul>
@@ -451,10 +466,10 @@
 
           <div class="col-md-6">
             <div id="show-contact">
-              <h2></h2>
+              <!-- <h2></h2>
               <p>First name: <span class="first-name"></span></p>
               <p>Last name: <span class="last-name"></span></p>
-              <p>Address:</p>
+              <p>Address:</p> -->
               <ul id="addresses">
 
               </ul>
